@@ -51,12 +51,10 @@ class Controller(udi_interface.Node):
         #Create the IAQ node.
         LOGGER.info('Creating IAQ node'.format()
 
-        try:
-            node = IAQ.CounterNode(self.poly, self.iaq, iaq, 'Indoor Air Quality')
-            self.poly.addNode(node)
-            self.wait_for_node_done()
-        except Exception as e:
-            LOGGER.error('Failed to create {}: {}'.format(title, e))
+        node = IAQ.CounterNode(self.poly, self.iaq, iaq, 'Indoor Air Quality')
+        self.poly.addNode(node)
+        self.wait_for_node_done()
+       
 
     '''
     node_queue() and wait_for_node_event() create a simple way to wait

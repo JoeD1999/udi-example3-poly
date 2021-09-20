@@ -15,7 +15,7 @@ Custom = udi_interface.Custom
 This is our Counter device node.  All it does is update the count at the
 poll interval.
 '''
-class CounterNode(udi_interface.Node):
+class IAQ_Node(udi_interface.Node):
     id = 'iaq'
     drivers = [
             {'driver': 'ST', 'value': 1, 'uom': 2},

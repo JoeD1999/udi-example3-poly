@@ -21,7 +21,7 @@ class CounterNode(udi_interface.Node):
             {'driver': 'ST', 'value': 1, 'uom': 2},
             {'driver': 'GV0', 'value': 0, 'uom': 56},
             {'driver': 'GV1', 'value': 0, 'uom': 56},
-            {'driver': 'GV2', 'value': 0, 'uom': 7}
+            {'driver': 'GV2', 'value': 0, 'uom': 7},
             ]
 
     def __init__(self, polyglot, parent, address, name):

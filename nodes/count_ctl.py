@@ -114,7 +114,7 @@ class Controller(udi_interface.Node):
         LOGGER.info('Creating {} children counters'.format(how_many))
         for i in range(0, how_many):
             address = 'child_{}'.format(i)
-            title = 'Child Counter {}'.format(i)
+            title = 'Test Child Counter {}'.format(i)
             try:
                 node = count_child.CounterNode(self.poly, self.address, address, title)
                 self.poly.addNode(node)

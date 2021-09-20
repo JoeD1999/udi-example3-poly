@@ -7,7 +7,7 @@ MIT License
 """
 import udi_interface
 import sys
-from nodes import count_ctl
+from nodes import pp_ctl
 
 LOGGER = udi_interface.LOGGER
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
         polyglot.start()
 
         # Create the controller node
-        count_ctl.Controller(polyglot, 'controller', 'controller', 'Counter')
+        count_ctl.Controller(polyglot, 'controller', 'controller', 'Pikes Peak 1')
 
         # Just sit and wait for events
         polyglot.runForever()

@@ -14,4 +14,7 @@ ND-child-ICON = Output
 ST-str-ST-NAME = Counter Active
 ST-str-GV0-NAME = Spaghetti
 ST-str-GV1-NAME = Ravioli
+ST-ctl-GV3-NAME = Call for Damper
+ST-ctl-GV4-NAME = Exhaust Total CFM
+ST-ctl-GV4-NAME = Makeup Total CFM
 

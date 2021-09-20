@@ -158,15 +158,18 @@ class Controller(udi_interface.Node):
     def poll(self, polltype):
 
         if 'shortPoll' in polltype:
+
+            '''    
             if self.Parameters['multiplier'] is not None:
                 mult = int(self.Parameters['multiplier'])
             else:
                 mult = 1
 
             self.count += 1
+            '''
 
             self.setDriver('GV1', 1, True, True)
-            self.setDriver('GV2', (self.count * mult), True, True)
+            self.setDriver('GV2', 1000, True, True)
             self.setDriver('GV3', '2000', True, True)
 
             # be fancy and display a notice on the polyglot dashboard

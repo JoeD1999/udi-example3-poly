@@ -48,6 +48,18 @@ class Controller(udi_interface.Node):
         polyglot.ready()
         self.poly.addNode(self)
 
+        #Create the IAQ node.
+        LOGGER.info('Creating IAQ node'.format()
+
+        address = 'IAQ'.format(i)
+        title = 'Indoor Air Quality'.format(i)
+        try:
+            node = IAQ.CounterNode(self.poly, self.address, address, title)
+            self.poly.addNode(node)
+            self.wait_for_node_done()
+        except Exception as e:
+            LOGGER.error('Failed to create {}: {}'.format(title, e))
+
     '''
     node_queue() and wait_for_node_event() create a simple way to wait
     for a node to be created.  The nodeAdd() API call is asynchronous and
@@ -70,6 +82,8 @@ class Controller(udi_interface.Node):
         self.Parameters.load(params)
         validChildren = False
 
+        '''
+
         if self.Parameters['nodes'] is not None:
             if int(self.Parameters['nodes']) > 0:
                 validChildren = True
@@ -84,7 +98,7 @@ class Controller(udi_interface.Node):
             self.poly.Notices.clear()
         else:
             self.poly.Notices['nodes'] = 'Please configure the number of child nodes to create.'
-
+        '''
 
     '''
     This is called when the node is added to the interface module. It is
@@ -107,6 +121,7 @@ class Controller(udi_interface.Node):
     number of nodes.  Because this is just a simple example, we'll first
     delete any existing nodes then create the number requested.
     '''
+    '''
     def createChildren(self):
         # delete any existing nodes
         nodes = self.poly.getNodes()
@@ -124,7 +139,7 @@ class Controller(udi_interface.Node):
             self.wait_for_node_done()
         except Exception as e:
             LOGGER.error('Failed to create {}: {}'.format(title, e))
-
+    '''
 
 
     '''

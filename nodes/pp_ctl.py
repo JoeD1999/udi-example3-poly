@@ -51,10 +51,8 @@ class Controller(udi_interface.Node):
         #Create the IAQ node.
         LOGGER.info('Creating IAQ node'.format()
 
-        address = 'IAQ'
-        title = 'Indoor Air Quality'
         try:
-            node = IAQ.CounterNode(self.poly, self.address, address, title)
+            node = IAQ.CounterNode(self.poly, self.iaq, iaq, 'Indoor Air Quality')
             self.poly.addNode(node)
             self.wait_for_node_done()
         except Exception as e:

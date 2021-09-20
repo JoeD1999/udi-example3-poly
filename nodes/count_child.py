@@ -21,6 +21,7 @@ class CounterNode(udi_interface.Node):
             {'driver': 'ST', 'value': 1, 'uom': 2},
             {'driver': 'GV0', 'value': 0, 'uom': 56},
             {'driver': 'GV1', 'value': 0, 'uom': 56},
+            {'driver': 'GV2', 'value': 0, 'uom': 7}
             ]
 
     def __init__(self, polyglot, parent, address, name):
@@ -60,6 +61,7 @@ class CounterNode(udi_interface.Node):
 
             self.setDriver('GV0', self.count, True, True)
             self.setDriver('GV1', (self.count * mult), True, True)
+            self.setDriver('GV2', '1000', True, True)
 
             # be fancy and display a notice on the polyglot dashboard
             self.poly.Notices[self.name] = '{}: Current count is {}'.format(self.name, self.count)

@@ -9,3 +9,4 @@ ND-child-ICON = Output
 ST-str-ST-NAME = Counter Active
 ST-str-GV0-NAME = Spaghetti
 ST-str-GV1-NAME = Ravioli
+ST-str-GV2-NAME = Exhaust Total CFM

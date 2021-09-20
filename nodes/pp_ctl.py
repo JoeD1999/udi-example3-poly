@@ -115,14 +115,15 @@ class Controller(udi_interface.Node):
                 self.poly.delNode(node)
 
         LOGGER.info('Creating {} children counters'.format(how_many))
-            address = 'IAQ'.format(i)
-            title = 'Indoor Air Quality'.format(i)
-            try:
-                node = IAQ.CounterNode(self.poly, self.address, address, title)
-                self.poly.addNode(node)
-                self.wait_for_node_done()
-            except Exception as e:
-                LOGGER.error('Failed to create {}: {}'.format(title, e))
+
+        address = 'IAQ'.format(i)
+        title = 'Indoor Air Quality'.format(i)
+        try:
+            node = IAQ.CounterNode(self.poly, self.address, address, title)
+            self.poly.addNode(node)
+            self.wait_for_node_done()
+        except Exception as e:
+            LOGGER.error('Failed to create {}: {}'.format(title, e))
 
 
 

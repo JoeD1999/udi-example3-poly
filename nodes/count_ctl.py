@@ -24,6 +24,9 @@ class Controller(udi_interface.Node):
     drivers = [
             {'driver': 'ST', 'value': 1, 'uom': 2},
             {'driver': 'GV0', 'value': 0, 'uom': 56},
+            {'driver': 'GV1', 'value': 0, 'uom': 2},
+            {'driver': 'GV2', 'value': 0, 'uom': 7},
+            {'driver': 'GV3', 'value': 0, 'uom': 7},
             ]
 
     def __init__(self, polyglot, parent, address, name):
@@ -146,3 +149,22 @@ class Controller(udi_interface.Node):
         LOGGER.info('Discover not implemented')
 
     commands = {'DISCOVER': noop}
+
+
+    '''
+    Set the Damper, Exhaust and Makeup Air CFM
+    '''
+
+    def poll(self, polltype):
+
+        if 'shortPoll' in polltype:
+            if self.Parameters['multiplier'] is not None:
+                mult = int(self.Parameters['multiplier'])
+            else:
+                mult = 1
+
+            self.count += 1
+
+            self.setDriver('GV1', 1, True, True)
+            self.setDriver('GV2', (self.count * mult), True, True)
+            self.setDriver('GV3', 2000, True, True)

@@ -2,6 +2,11 @@ ND-ctl-NAME = Example - Counter Ctl
 ND-ctl-ICON = Output
 ST-ctl-ST-NAME = NodeServer Online
 ST-ctl-GV0-NAME = Number of childeren
+ST-ctl-GV1-NAME = Call for Damper
+ST-ctl-GV2-NAME = Exhaust Total CFM
+ST-ctl-GV3-NAME = Makeup Total CFM
+
+
 CMD-ctl-DISCOVER-NAME = Re-Discover
 
 ND-child-NAME = Example - Counter Child
@@ -9,4 +14,4 @@ ND-child-ICON = Output
 ST-str-ST-NAME = Counter Active
 ST-str-GV0-NAME = Spaghetti
 ST-str-GV1-NAME = Ravioli
-ST-str-GV2-NAME = Exhaust Total CFM
+

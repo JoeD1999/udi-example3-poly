@@ -4,6 +4,9 @@
     <sts>
       <st id="ST" editor="bool" />
       <st id="GV0" editor="raw" />
+      <st id="GV1" editor="bool" />
+      <st id="GV2" editor="cfm" />
+      <st id="GV3" editor="cfm" />
 	</sts>
     <cmds>
       <sends />

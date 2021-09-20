@@ -51,8 +51,9 @@ class Controller(udi_interface.Node):
         #Create the IAQ node.
         LOGGER.info('Creating IAQ node'.format()
 
-        node = iaq.IAQ_Node(self.poly, 'iaq', 'iaq', 'Indoor Air Quality')
-        self.poly.addNode(node)
+        #node = iaq.IAQ_Node(self.poly, 'iaq', 'iaq', 'Indoor Air Quality')
+        #self.poly.addNode(node)
+        self.poly.addNode(iaq.IAQ_Node(self.poly, self.address, 'iaq', 'Indoor Air Quality')
         self.wait_for_node_done()
        
 

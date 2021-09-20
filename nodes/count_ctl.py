@@ -25,8 +25,8 @@ class Controller(udi_interface.Node):
             {'driver': 'ST', 'value': 1, 'uom': 2},
             {'driver': 'GV0', 'value': 0, 'uom': 56},
             {'driver': 'GV1', 'value': 0, 'uom': 2},
-            {'driver': 'GV2', 'value': 0, 'uom': 7},
-            {'driver': 'GV3', 'value': 0, 'uom': 7},
+            {'driver': 'GV2', 'value': 1, 'uom': 7},
+            {'driver': 'GV3', 'value': 1, 'uom': 7},
             ]
 
     def __init__(self, polyglot, parent, address, name):
@@ -167,4 +167,7 @@ class Controller(udi_interface.Node):
 
             self.setDriver('GV1', 1, True, True)
             self.setDriver('GV2', (self.count * mult), True, True)
-            self.setDriver('GV3', 2000, True, True)
+            self.setDriver('GV3', '2000', True, True)
+
+            # be fancy and display a notice on the polyglot dashboard
+            self.poly.Notices[self.name] = '{}: Current controller count is {}'.format(self.name, self.count)
